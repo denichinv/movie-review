@@ -1,1 +1,8 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(./assets/fonts/Montserrat-VariableFont_wght_1_.woff) format('woff')
+}
 
+body{
+  font-family: 'Montserrat', sans-serif;
+}
