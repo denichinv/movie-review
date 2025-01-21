@@ -1,0 +1,27 @@
+.navbar{
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 22px;
+    display: flex;
+    margin: 0px;
+}
+
+a{
+margin: 0px 15px;
+text-decoration: none;
+font-weight: bold;
+color:rgb(37, 40, 41);
+}
+a:hover {
+    color: whitesmoke;
+}
+
+.navbar > h1 {
+font-size: xx-large;
+}
+
+.navbar_links {
+    display: flex;
+    align-items: center;
+
+}
