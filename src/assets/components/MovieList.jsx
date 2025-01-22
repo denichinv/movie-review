@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './movieList.css'
 import MovieCard from './MovieCard'
 const MovieList = () => {
+   
+    
+
+    useEffect(()=> {const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNGVjYjg5NmNkNzFiNTc3YjJmNGY0YTIwM2ZlOGM1NCIsIm5iZiI6MTczNzU2NzY2Ny4zMTksInN1YiI6IjY3OTEyZGIzMzQ3OWM0OGNjYjI4ZDE1NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9L1374h9LdOCTyH7cCyhIlki8feOrOnOOVV5cHnKQ1w'
+        }
+      };
+      
+      fetch('https://api.themoviedb.org/3/person/popular?language=en-US&page=1', options)
+        .then(res => res.json())
+        .then(data => {setMovies(data.results)
+        })
+        .catch(err => console.error(err));
+        
+      },[])
+
+     
   return (
     <section className='movie_list'>
     <header className='movieheader'>
@@ -24,7 +44,7 @@ const MovieList = () => {
         </div>
     </header>
     <div className='movie_shows'>
-        <MovieCard/>
+ <MovieCard/>
     </div>
     </section>
   )
