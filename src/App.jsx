@@ -7,10 +7,9 @@ function App() {
   return (
     <div>
       <Header/>
-      <MovieList/>
     <main className="main-content">
-      <h1>Movie Review App</h1>
-      <p>This is the main content area for our movie review application.</p>
+      <MovieList/>
+
     </main>
   </div>
   )
