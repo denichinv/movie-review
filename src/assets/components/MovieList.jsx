@@ -1,5 +1,6 @@
 import React from 'react'
 import './movieList.css'
+import MovieCard from './MovieCard'
 const MovieList = () => {
   return (
     <section className='movie_list'>
@@ -22,6 +23,9 @@ const MovieList = () => {
             </select>
         </div>
     </header>
+    <div className='movie_shows'>
+        <MovieCard/>
+    </div>
     </section>
   )
 }
