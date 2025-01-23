@@ -1,19 +1,25 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './movieCard.css'
-const MovieCard = () => {
+const MovieCard = ({movie}) => {
   return (
-    <a href="" className='movie_show'>
-      <img src="https://i0.wp.com/www.shutterstock.com/blog/wp-content/uploads/sites/5/2024/03/Stopmotion-poster.jpg?ssl=1g" className='movie_img' alt='moviedetails' />
+    <a href={`https://www.themoviedb.org/movie/${movie.id}`} target='_blank' className='movie_show'>
+      <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className='movie_img' alt='moviedetails' />
     <div className="movie_details">
-      <h3 className='movie_details_h3'>Kraven The Hunter</h3>
-      <p className='moviedesc'>Details of Movies</p>
-      <p className='movierating'>8.0{""} <img src='https://static.vecteezy.com/system/resources/thumbnails/019/617/676/small_2x/gold-star-symbol-png.png' className='emoji_class' alt='rating Icon'></img> </p>
-      <div className='center_el moviedate'>
-        <p>10-10-2024</p>
+      <p className='movierating'>{movie.vote_average.toFixed(1)} <img src='https://static.vecteezy.com/system/resources/thumbnails/019/617/676/small_2x/gold-star-symbol-png.png' className='emoji_class' alt='rating Icon'></img> </p>
+        <p className='moviedate'>{movie.release_date}</p>
+     
       </div>
-    </div>
+   
     </a>
   )
 }
 
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    id:PropTypes.number,
+    poster_path: PropTypes.string,
+ release_date:PropTypes.string,
+vote_average: PropTypes.number }).isRequired
+}
 export default MovieCard
