@@ -34,7 +34,7 @@
     display: flex;
     gap: 1rem;
     padding: 0;
-    margin: 0;
+    margin: 0px 10px;
 }
 
 .movie_filter_item {
@@ -42,12 +42,24 @@
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
     color: white;
+    list-style: none;
+    margin-bottom: 10px;
 }
 
 .movie_filter_item:hover {
-    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1); 
+}
+
+.movie_filter_item.active {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: scale(1.2); 
+}
+
+/* Disable hover effect when active */
+.movie_filter_item.active:hover {
+    transform: scale(1.2); 
 }
 
 .movie_sorting {
@@ -70,5 +82,18 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     padding: 1rem;
+    place-items: center;
 }
 
+.noMovies {
+    color: black;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+
+
+  }
