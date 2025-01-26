@@ -1,8 +1,52 @@
-# React + Vite
+# CineVault 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based movie discovery portfolio project showcasing API integration, state management, and responsive design.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse popular movies from TMDB
+- Filter movies by ratings (6+, 7+, 8+)
+- Sort movies by date, rating, and alphabetically
+- Responsive design
+
+## 🛠 Tech Stack
+
+- React
+- Vite
+- TMDB API
+- CSS
+
+## 🚀 Setup
+
+1. Clone repository
+```bash
+git clone https://github.com/yourusername/cinevault.git
+cd cinevault
+npm install
+```
+
+2. Create `.env` file with TMDB API key:
+```
+VITE_MOVIE_API_KEY=your_api_key
+```
+
+3. Run development server:
+```bash
+npm run dev
+```
+
+## 📂 Key Components
+
+- `MovieList.jsx`: Core movie listing logic
+- `FilterMovies.jsx`: Rating filter
+- `SortMovies.jsx`: Sorting controls
+- `MovieCard.jsx`: Individual movie display
+
+## 🤝 Contributing
+
+1. Fork repository
+2. Create feature branch
+3. Commit changes
+4. Push branch
+5. Open Pull Request
+
