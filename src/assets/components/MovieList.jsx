@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import './movieList.css'
 import MovieCard from './MovieCard'
 import FIlterMovies from './FIlterMovies'
-
+import SortMovies from './SortMovies'
 const MovieList = () => {
     const [movies, setMovies] = useState([])
     const [allMoviesFiltered, setAllMoviesFiltered] = useState([])
+    const [sortBy, setSortBy] = useState("")
     const [givingRating,setRating] = useState(0)
     const [loading, setLoading] = useState(true)    
     useEffect(() => {
@@ -18,6 +19,8 @@ const MovieList = () => {
         const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`);
         const data = await res.json();
         setMovies(data.results);
+        console.log(data.results);
+        
         setAllMoviesFiltered(data.results);
         setLoading(false)
     }
@@ -35,7 +38,30 @@ if (givingRating == rating) {
 }
 
     }
-  
+
+    const handleSort = (e) => {
+        const value = e.target.value
+        setSortBy(value)
+
+        if(value === "date") {
+            const sortedMovies = [...movies].sort((a,b) => new Date (b.release_date) - new Date(a.release_date))
+            setMovies(sortedMovies)
+        }else if(value === "rating"){
+            const sortedMovies = [...movies].sort((a,b)=> b.vote_average - a.vote_average)
+            setMovies(sortedMovies)
+        }else if(value === "ascending"){
+            const sortedMovies = [...movies].sort((a,b)=> a.original_title.localeCompare(b.original_title))
+            setMovies(sortedMovies)
+        }
+        else if(value === "descending"){
+            const sortedMovies = [...movies].sort((a,b)=> b.original_title.localeCompare(a.original_title))
+            setMovies(sortedMovies)
+        }
+        else{
+            setMovies(allMoviesFiltered)
+        }
+        
+    }
     return (
         
         <section className='movie_list'>
@@ -43,15 +69,7 @@ if (givingRating == rating) {
                 <h2 className='center_el movieh2head'>Popular</h2>
                 <div className='center_el movie_listadd'>
                    <FIlterMovies givingRating={givingRating} onRatingButtonClick={handleFilter} ratings={[6,7,8]}/>
-                    <select name="" id="" className="movie_sorting"> 
-                        <option value="">Sort By</option>
-                        <option value="">Date</option>
-                        <option value="">Rating</option>
-                    </select>
-                    <select name="" id="" className="movie_sorting">
-                        <option value="">Ascending</option>
-                        <option value="">Descending</option>
-                    </select>
+                   <SortMovies sortBy={sortBy} handleSort={handleSort}/>
                 </div>
             </header>
             <div className='movie_shows'>

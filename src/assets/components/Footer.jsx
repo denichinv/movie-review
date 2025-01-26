@@ -8,7 +8,7 @@ const Footer = () => {
         <div>
           <h1 className="footer-logo">CineVault</h1>
           <p className="footer-description">
-            Your ultimate vault for movies, shows, and entertainment news. Dive into a world of cinematic wonders!
+            Your ultimate vault for movies. Dive into a world of cinematic wonders!
           </p>
         </div>
       </div>
