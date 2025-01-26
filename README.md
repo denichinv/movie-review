@@ -1,6 +1,6 @@
 # CineVault 🎬
 
-A React-based movie discovery portfolio project showcasing API integration, state management, and responsive design.
+A React-based movie discovery showcasing API integration, state management, and responsive design.
 
 ## ✨ Features
 
@@ -42,11 +42,6 @@ npm run dev
 - `SortMovies.jsx`: Sorting controls
 - `MovieCard.jsx`: Individual movie display
 
-## 🤝 Contributing
 
-1. Fork repository
-2. Create feature branch
-3. Commit changes
-4. Push branch
-5. Open Pull Request
-
+## Screenshots
+![Initial View](/screenshots/initial-view.png)
