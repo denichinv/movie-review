@@ -20,8 +20,8 @@ A React-based movie discovery showcasing API integration, state management, and 
 
 1. Clone repository
 ```bash
-git clone https://github.com/yourusername/cinevault.git
-cd cinevault
+git clone https://github.com/denichinv/CineVault.git
+cd CineVault
 npm install
 ```
 
